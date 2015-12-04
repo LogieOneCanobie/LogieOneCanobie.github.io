@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Nightmares
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="http://newscontent.thaivisa.com/wp-content/uploads/2015/04/05044503/ghost.jpg">
+	</head>
+	<body style="background-color: black;">
+		<center>
+		<h1 style="color: white">Nightmares</h1>
+		<hr>
+		<img src="shrek.gif" height="5" width="5" onmouseover="stop(), increase()" onmouseleave="stop(), decrease()" id="image"></img>
+		</center>
+		<script>
+			var increaseSize;
+			var decreaseSize;
+			var image = document.getElementById('image');
+			
+			function increase(){
+				increaseSize = setInterval(enlarge, 1);
+				enlarge();
+			}
+			
+			function decrease(){
+				decreaseSize = setInterval(smaller, 1);
+				smaller();
+			}
+			
+			function enlarge(){
+				if (image.width < 750 && image.height < 750){
+					image.height += 7;
+					image.width += 7;
+				}
+			}
+			
+			function smaller(){
+				if (image.width > 5 && image.height > 5){
+					image.height -= 7;
+					image.width -= 7;
+				}
+			}
+			
+			function stop(){
+				clearInterval(increaseSize);
+				clearInterval(decreaseSize);
+			}
+			
+		</script>
+	</body>
+</html>
